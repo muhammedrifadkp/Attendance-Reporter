@@ -274,6 +274,13 @@ select:focus {
   margin-bottom: 24px;
 }
 
+.batch-footer {
+  display: flex;
+  justify-content: center;
+  border-top: 1px dashed var(--border-color);
+  padding-top: 16px;
+}
+
 .remove-batch-btn {
   background: transparent;
   border: none;
@@ -332,20 +339,72 @@ select:focus {
   }
 }
 
-@media (max-width: 600px) {
-  .student-controls {
-    grid-template-columns: 1fr;
-    gap: 8px;
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
   }
 
+  .card-body {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.75rem;
+  }
+
+  .flex-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .flex-header .btn-secondary-sm {
+    width: 100%;
+    text-align: center;
+  }
+
+  .batch-footer .add-student-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  .student-controls {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Keep remove button in flow to avoid overlap */
   .remove-student-btn {
-    position: absolute;
-    top: 8px;
-    right: 8px;
+    align-self: flex-end;
+    margin-top: -4px;
   }
 
   body {
     padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .card-header {
+    padding: 16px;
+  }
+
+  .card-body {
+    padding: 16px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 10px 20px;
+    font-size: 0.9375rem;
   }
 }
 /* Modal Styling */
