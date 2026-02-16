@@ -1,0 +1,406 @@
+/* Design System */
+:root {
+  --primary-color: #075e54;
+  --primary-hover: #128c7e;
+  --accent-color: #25d366;
+  --bg-color: #f0f2f5;
+  --card-bg: #ffffff;
+  --text-main: #1c1e21;
+  --text-muted: #65676b;
+  --border-color: #e4e6eb;
+  --error-color: #f02849;
+  --radius-lg: 12px;
+  --radius-md: 8px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.5;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+
+header p {
+  color: var(--text-muted);
+}
+
+/* Card Styling */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  margin-bottom: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.card-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-color);
+  background: #fafafa;
+}
+
+.card-header h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.flex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-body {
+  padding: 24px;
+}
+
+/* Form Layout */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: var(--text-main);
+}
+
+.form-group small {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="tel"],
+select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  transition: var(--transition);
+  background: #fff;
+  color: var(--text-main);
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(7, 94, 84, 0.1);
+}
+
+/* Student Rows */
+.students-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.student-row {
+  padding: 16px;
+  background: #f9f9f9;
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--border-color);
+  position: relative;
+  transition: var(--transition);
+}
+
+.student-row:hover {
+  border-color: var(--primary-color);
+  background: #fff;
+}
+
+.student-controls {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 2fr auto;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.remove-student-btn {
+  background: white;
+  border: 1.5px solid var(--border-color);
+  color: var(--text-muted);
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  align-self: center;
+  justify-self: end;
+}
+
+.remove-student-btn:hover {
+  background: #fff5f6;
+  border-color: var(--error-color);
+  color: var(--error-color);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(240, 40, 73, 0.1);
+}
+
+/* Buttons */
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(7, 94, 84, 0.2);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1.5px solid var(--primary-color);
+  padding: 8px 16px;
+  font-size: 0.875rem;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(7, 94, 84, 0.05);
+}
+
+.actions {
+  margin-top: 32px;
+}
+
+/* Utility Classes */
+.mb-24 {
+  margin-bottom: 24px;
+}
+.mt-16 {
+  margin-top: 16px;
+}
+.full-width {
+  width: 100%;
+}
+
+.students-list-header h3 {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-secondary-sm {
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  background: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-secondary-sm:hover {
+  background: rgba(7, 94, 84, 0.05);
+}
+
+.batch-actions {
+  margin-bottom: 24px;
+}
+
+.remove-batch-btn {
+  background: transparent;
+  border: none;
+  color: var(--error-color);
+  opacity: 0.6;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.remove-batch-btn:hover {
+  opacity: 1;
+}
+
+/* Updated Student Rows for nesting */
+.student-row {
+  padding: 12px;
+  background: #fff;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  position: relative;
+  margin-bottom: 12px;
+}
+
+/* Helper Classes */
+.hidden {
+  display: none !important;
+}
+
+.animate-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+.animate-out {
+  animation: slideOut 0.2s ease-in forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@media (max-width: 600px) {
+  .student-controls {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .remove-student-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+
+  body {
+    padding: 12px;
+  }
+}
+/* Modal Styling */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+.modal-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 32px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.modal-header {
+  margin-bottom: 24px;
+}
+
+.modal-header h2 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+
+.modal-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.animate-pop {
+  animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
